@@ -1,0 +1,11 @@
+php spark list
+
+php spark make:migration create_pegawai_table
+
+php spark migrate
+
+php spark make:model JabatanModel
+
+php spark make:controller JabatanController
+
+php spark routes
