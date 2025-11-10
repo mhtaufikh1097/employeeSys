@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-danger" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
   <div class="container">
-    <a class="navbar-brand" href="#">Pegawai</a>
+    <a class="navbar-brand" href="#">SI HPI</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,6 +15,14 @@
         <li class="nav-item">
           <a class="nav-link" href="/pegawai">Pegawai</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pegawai">Assets</a>
+        </li>
+        <?php if(session()->get('login')): ?>
+          <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+        <?php endif; ?>
       </ul>
     </div>
   </div>

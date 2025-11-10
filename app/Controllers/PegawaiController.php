@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\PegawaiModel;
+use App\Models\JabatanModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class PegawaiController extends BaseController
@@ -24,35 +25,45 @@ class PegawaiController extends BaseController
     }
         public function create()
     {
-        
-        return view('pegawai/create');
+        $modelJabatan = new JabatanModel();
+        $data['jabatan'] = $modelJabatan->findAll();
+        return view('pegawai/create', $data);
     }
 
         public function store()
+        
     {
+       
         $data = [
             'nama_pegawai' => $this->request->getPost('nama_pegawai'),
             'alamat' => $this->request->getPost('alamat'),
             'telepon' => $this->request->getPost('telepon'),
+            'jabatan_id' => $this->request->getPost('jabatan_id'),
+            
         ];
 
-        $this->modelJabatan->save($data);
-        return redirect()->to('jabatan');
+        $this->modelPegawai->save($data);
+        return redirect()->to('pegawai');
     }
 
         public function edit($id)
     {
+        $modelJabatan = new JabatanModel();
+        $data['jabatan'] = $modelJabatan->findAll();
         $data['pegawai'] = $this->modelPegawai->find($id);
         return view('pegawai/edit', $data);
     }
 
         public function update($id)
     {
+        
         $data = [
             'id' => $id,
-            'nama_pegawai' => $this->request->getPost('nama_pegawai'),
+             'nama_pegawai' => $this->request->getPost('nama_pegawai'),
             'alamat' => $this->request->getPost('alamat'),
             'telepon' => $this->request->getPost('telepon'),
+            'jabatan_id' => $this->request->getPost('jabatan_id'),
+           
         ];
         $this->modelPegawai->save($data);
         return redirect()->to('pegawai');
@@ -60,7 +71,7 @@ class PegawaiController extends BaseController
 
         public function delete($id)
     {
-        $this->modelJabatan->delete($id);
-        return redirect()->to('jabatan');
+        $this->modelPegawai->delete($id);
+        return redirect()->to('pegawai');
     }
 }

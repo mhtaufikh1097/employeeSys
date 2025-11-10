@@ -13,6 +13,7 @@
                     <th>No.</th>
                     <th>Nama Jabatan</th>
                     <th>Deskripsi</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>

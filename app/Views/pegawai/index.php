@@ -15,7 +15,7 @@
                     <th>Alamat</th>
                     <th>Telepon</th>
                     <th>Jabatan</th>
-                    <th>Aksi</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>

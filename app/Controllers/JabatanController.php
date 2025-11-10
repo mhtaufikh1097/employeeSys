@@ -11,6 +11,11 @@ class JabatanController extends BaseController
     protected $modelJabatan;
     public function __construct()
     {
+          if(!session()->get('login')){
+            redirect()->to('/login')->with('error','Harus login dulu ya mas ..')->send();
+            exit;
+        } //batasi hak akases login
+
         $this->modelJabatan = new JabatanModel();
     }
     public function index()

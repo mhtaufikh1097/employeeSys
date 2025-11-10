@@ -9,3 +9,10 @@ php spark make:model JabatanModel
 php spark make:controller JabatanController
 
 php spark routes
+
+
+php spark make:seeder UserSeeder
+php spark db:seed UserSeeder
+
+
+php spark make:filter AuthFilter
