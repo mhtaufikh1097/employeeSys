@@ -1,0 +1,85 @@
+  html, body{
+            height: 100%
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+  
+  .stat-card {
+    border-radius: 14px;
+    padding: 18px 20px;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    opacity: 0.16;
+    background: #000;
+  }
+
+  .stat-card-teal   { background-color: #00a8c5; }  /* kayak card 1 */
+  .stat-card-green  { background-color: #22a538; }  /* card 2 */
+  .stat-card-yellow { background-color: #f3b000; color:#1f2933; }
+
+  .stat-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+
+  .stat-sub {
+    font-size: 0.87rem;
+    opacity: 0.9;
+  }
+
+  .stat-icon {
+    font-size: 2.5rem;
+    opacity: 0.35;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+    filter: brightness(1.03);
+  }
+
+  /* login */
+   .login-card{
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+      backdrop-filter: blur(2px);
+    }
+    .brand-badge{
+      width: 82px; height: 82px;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 6px 16px rgba(0,0,0,.08);
+      display: grid; place-items: center;
+      margin: -52px auto 12px;
+    }
+    .brand-badge img{ max-width: 56px; max-height: 56px; }
+    .form-label{ font-weight: 600; }
+    .form-control{
+      border-radius: 12px;
+      border-color: #e6e7ea;
+    }
+    .btn-primary{
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(24,119,242,.18);
+    }
+    .muted{
+      color:#6b7280; font-size:.92rem;
+    } 
+    

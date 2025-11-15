@@ -5,7 +5,9 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+$routes->group('', ['filter' => 'auth'], static function ($routes){
 $routes->get('/', 'Home::index');
+});
 
 //Route for AUTH
 $routes->match(['get', 'post'], '/login', 'AuthController::login');
