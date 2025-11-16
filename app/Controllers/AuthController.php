@@ -30,7 +30,7 @@ class AuthController extends BaseController
 
                 return redirect()->to('/');
             }
-            session()->setFlashData('error','Username dan password anda salah bangsat');
+            session()->setFlashData('error','Username dan password anda salah ');
             return redirect()->back();
         }
 

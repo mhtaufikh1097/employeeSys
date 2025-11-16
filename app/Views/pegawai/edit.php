@@ -7,7 +7,7 @@
         <a href="/pegawai" class="btn btn-primary">Kembali</a>
     </div>
     <div class="pt-3">
-       <form action="/pegawai/update/<?= $pegawai->id; ?>" method="post">
+       <form action="/pegawai/update/<?= $pegawai->id; ?>" method="post" enctype="multipart/form-data">
         <?= csrf_field(); ?>
         <div class="mb-3 col-md-6 col-lg-4">
             <label for="" class="form-label">Nama pegawai</label>
@@ -29,9 +29,17 @@
                <?php } ?> 
             </select>
         </div>
-        <div class="mb-2">
+        <div class="mb-3"> 
+            <label for="" class="form-label">Foto Pegawai:</label>
+            <?php if($pegawai->foto_pegawai): ?>
+                <div class="mb-2">
+                    <img src="<?= site_url(); ?>uploads/<?= $pegawai->foto_pegawai; ?>" class="img-thumbnail" width="90" alt="">
+                </div>
+            <?php endif ?>
+            <input type="file" name="file_foto"  class="form-control">
+    </div>
         <button type="submit" class="btn btn-warning pb-2">Update</button>
-        </div>  
+          
     </form>
     </div>
 </div>

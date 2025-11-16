@@ -21,7 +21,8 @@ class PegawaiController extends BaseController
     }
     public function show($id)
     {
-
+        $data['pegawai'] = $this->modelPegawai->getPegawaiWithJabatanWhere($id);
+        return view('pegawai/show', $data);
     }
         public function create()
     {
@@ -31,8 +32,8 @@ class PegawaiController extends BaseController
     }
 
         public function store()
-        
-    {
+    
+        {
        
         $data = [
             'nama_pegawai' => $this->request->getPost('nama_pegawai'),
@@ -42,7 +43,15 @@ class PegawaiController extends BaseController
             
         ];
 
-        $this->modelPegawai->save($data);
+        //handle foto
+        $fileFoto = $this->request->getFile('file_foto');
+        if($fileFoto && $fileFoto->isValid() && !$fileFoto->hasMoved()){
+            $namaFile = $fileFoto->getRandomName();
+            $fileFoto->move('uploads', $namaFile);
+            $data['foto_pegawai'] = $namaFile;
+        }
+        
+        $this->modelPegawai->save($data);   
         return redirect()->to('pegawai');
     }
 
@@ -65,6 +74,13 @@ class PegawaiController extends BaseController
             'jabatan_id' => $this->request->getPost('jabatan_id'),
            
         ];
+        //handle foto
+        $fileFoto = $this->request->getFile('file_foto');
+        if($fileFoto && $fileFoto->isValid() && !$fileFoto->hasMoved()){
+            $namaFile = $fileFoto->getRandomName();
+            $fileFoto->move('uploads', $namaFile);
+            $data['foto_pegawai'] = $namaFile;
+        }
         $this->modelPegawai->save($data);
         return redirect()->to('pegawai');
     }
