@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="<?= base_url('img/kckc.png'); ?>">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SI HPI</title>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
@@ -21,7 +23,7 @@
      <footer class="footer mt-auto py-4 bg-dark text-light shadow-lg">
   <div class="container text-center d-flex flex-column flex-md-row justify-content-between align-items-center">
     <div class="mb-2 mb-md-0">
-      <img src="<?= base_url('img/whs.png'); ?>" alt="logo" height="36" class="me-2 opacity-75">
+      <img src="<?= base_url('img/whs.png'); ?>" alt="logo" height="25" class="me-2 opacity-90">
       <span class="fw-semibold">Information System HPI</span>
     </div>
     <div class="small text-secondary">
