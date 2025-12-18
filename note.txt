@@ -1,6 +1,7 @@
 php spark list
 
 php spark make:migration create_pegawai_table
+php spark make:migration AddColumnPegawaiTable
 
 php spark migrate
 
